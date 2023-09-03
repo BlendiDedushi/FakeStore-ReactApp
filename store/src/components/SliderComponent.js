@@ -1,6 +1,6 @@
 import React from "react";
 
-function SliderComponent() {
+function SliderComponent({ images }) {
   return (
     <div>
       <div
@@ -8,16 +8,46 @@ function SliderComponent() {
         className="carousel slide"
         data-bs-ride="carousel"
       >
+        <div className="carousel-indicators">
+          {images.length > 0 &&
+            images.map((slide, index) =>
+              slide.id === 1 ? (
+                <button
+                  type="button"
+                  key={slide.id}
+                  data-bs-target="#slider"
+                  data-bs-slide-to={index}
+                  className="active"
+                  aria-current="true"
+                  aria-label={`Slide ${slide.id}`}
+                ></button>
+              ) : (
+                <button
+                  type="button"
+                  key={slide.id}
+                  data-bs-target="#slider"
+                  data-bs-slide-to={index}
+                  aria-label={`Slide ${slide.id}`}
+                ></button>
+              )
+            )}
+        </div>
         <div className="carousel-inner">
-          <div className="carousel-item active" data-bs-interval="10000">
-            <img src="..." className="d-block w-100" alt="..." />
-          </div>
-          <div className="carousel-item" data-bs-interval="2000">
-            <img src="..." className="d-block w-100" alt="..." />
-          </div>
-          <div className="carousel-item">
-            <img src="..." className="d-block w-100" alt="..." />
-          </div>
+          {images.length > 0 &&
+            images.map((slide) => (
+              <div
+                className={`carousel-item ${slide.id === 1 ? "active" : ""}`}
+                key={slide.id}
+                data-bs-interval="5000"
+              >
+                <img
+                  src={slide.url}
+                  className="d-block w-100"
+                  style={{ height: "45vh" }}
+                  alt={slide.alt}
+                />
+              </div>
+            ))}
         </div>
         <button
           className="carousel-control-prev"

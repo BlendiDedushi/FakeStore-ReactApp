@@ -1,7 +1,22 @@
-import axios from 'axios'
+import axios from "axios";
 
-export async function getProducts(){
-    const response = await axios.get('https://fakestoreapi.com/products')
-    const {data} = response
-    return data;
+export async function getProducts() {
+  const api = `https://fakestoreapi.com/products`;
+  const response = await axios.get(api);
+  const { data } = response;
+  return data;
+}
+
+export async function getProductById(id) {
+  const api = `https://fakestoreapi.com/products/${id}`;
+  const response = await axios.get(api);
+  const { data } = response;
+  return data;
+}
+
+export async function getCategories() {
+  const api = `https://fakestoreapi.com/products/categories`;
+  const response = await axios.get(api);
+  const { data } = response;
+  return data;
 }

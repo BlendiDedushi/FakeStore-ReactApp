@@ -7,7 +7,7 @@ function NavbarComponent() {
       <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div className="container">
           <Link className="navbar-brand" to="/">
-            Navbar
+            FakeStore
           </Link>
           <button
             className="navbar-toggler"
@@ -28,8 +28,8 @@ function NavbarComponent() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="#">
-                  Link
+                <Link className="nav-link" to="/products">
+                  Products
                 </Link>
               </li>
               <li className="nav-item dropdown">
