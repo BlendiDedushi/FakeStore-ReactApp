@@ -7,6 +7,7 @@ import { getProducts } from "./helpers/api";
 import FooterComponent from "./components/FooterComponent";
 import Products from "./pages/Products";
 import Product from "./pages/Product";
+import CategoryProducts from "./pages/CategoryProducts";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -24,6 +25,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
             <Route path="/products/:id" element={<Product />} />
+            <Route path="/products/category/:category" element={<CategoryProducts />} />
           </Routes>
         </ProductsContext.Provider>
         <FooterComponent />

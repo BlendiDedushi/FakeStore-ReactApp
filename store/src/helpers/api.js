@@ -20,3 +20,10 @@ export async function getCategories() {
   const { data } = response;
   return data;
 }
+
+export async function getProductsByCategory(category) {
+  const api = `https://fakestoreapi.com/products/category/${category}`;
+  const response = await axios.get(api);
+  const { data } = response;
+  return data;
+}

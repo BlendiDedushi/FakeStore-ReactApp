@@ -12,7 +12,7 @@ function ProductComponent({ product }) {
       />
       <div
         className="card-body border d-flex flex-column justify-content-between"
-        style={{ height: "23vh" }}
+        style={{ height: "25vh" }}
       >
         <h5 className="card-title">{product.title}</h5>
         <div className="card-text">

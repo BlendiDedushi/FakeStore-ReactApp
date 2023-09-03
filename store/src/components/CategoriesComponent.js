@@ -43,7 +43,7 @@ function CategoriesComponent() {
                 <h5 className="card-title">
                   {category.charAt(0).toUpperCase() + category.slice(1)}
                 </h5>
-                <Link to="#" className="btn btn-sm btn-outline-dark">
+                <Link to={`/products/category/${category}`} className="btn btn-sm btn-outline-dark">
                   <i className="bi bi-box-arrow-right"></i>
                 </Link>
               </div>
