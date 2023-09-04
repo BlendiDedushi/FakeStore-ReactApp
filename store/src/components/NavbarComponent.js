@@ -1,10 +1,25 @@
-import React from "react";
-import {Link} from 'react-router-dom'
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { getLoggedInUser } from "../helpers/storage";
 
 function NavbarComponent() {
+  const navigate = useNavigate();
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    setUser(getLoggedInUser());
+  });
+
+  const handleLogOut = (e) => {
+    localStorage.removeItem("loggedIn");
+    navigate("/");
+  };
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+      <nav
+        className="navbar navbar-expand-lg bg-body-tertiary"
+        data-bs-theme="dark"
+      >
         <div className="container">
           <Link className="navbar-brand" to="/">
             FakeStore
@@ -40,27 +55,37 @@ function NavbarComponent() {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Profile
+                  {user === null ? "Guest" : user}
                 </Link>
                 <ul className="dropdown-menu">
-                  <li>
-                    <Link className="dropdown-item" to="#">
-                      Login
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="#">
-                      Register
-                    </Link>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" href="#">
-                      Logout
-                    </Link>
-                  </li>
+                  {user === null ? (
+                    <>
+                      <li>
+                        <Link className="dropdown-item" to="/login">
+                          Login
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="dropdown-item" to="/register">
+                          Register
+                        </Link>
+                      </li>
+                    </>
+                  ) : (
+                    <>
+                      <li>
+                        <hr className="dropdown-divider" />
+                      </li>
+                      <li>
+                        <button
+                          className="dropdown-item"
+                          onClick={handleLogOut}
+                        >
+                          Logout
+                        </button>
+                      </li>
+                    </>
+                  )}
                 </ul>
               </li>
             </ul>

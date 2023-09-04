@@ -8,6 +8,8 @@ import FooterComponent from "./components/FooterComponent";
 import Products from "./pages/Products";
 import Product from "./pages/Product";
 import CategoryProducts from "./pages/CategoryProducts";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -25,7 +27,12 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
             <Route path="/products/:id" element={<Product />} />
-            <Route path="/products/category/:category" element={<CategoryProducts />} />
+            <Route
+              path="/products/category/:category"
+              element={<CategoryProducts />}
+            />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
         </ProductsContext.Provider>
         <FooterComponent />
