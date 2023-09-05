@@ -10,6 +10,9 @@ import Product from "./pages/Product";
 import CategoryProducts from "./pages/CategoryProducts";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import Orders from "./pages/Orders";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -33,6 +36,9 @@ function App() {
             />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/orders" element={<Orders />} />
           </Routes>
         </ProductsContext.Provider>
         <FooterComponent />

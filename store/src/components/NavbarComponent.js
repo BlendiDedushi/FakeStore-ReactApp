@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { getLoggedInUser } from "../helpers/storage";
+import { getCartItems, getLoggedInUser } from "../helpers/storage";
 
 function NavbarComponent() {
   const navigate = useNavigate();
   const [user, setUser] = useState([]);
+  const [cart, setCart] = useState(0);
 
   useEffect(() => {
     setUser(getLoggedInUser());
+    setCart(getCartItems().length);
   });
 
   const handleLogOut = (e) => {
@@ -42,6 +44,16 @@ function NavbarComponent() {
                   Home
                 </Link>
               </li>
+              {user !== null && (
+                <>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/cart">
+                      Cart {`{${cart}}`}
+                    </Link>
+                  </li>
+                </>
+              )}
+
               <li className="nav-item">
                 <Link className="nav-link" to="/products">
                   Products
@@ -73,6 +85,11 @@ function NavbarComponent() {
                     </>
                   ) : (
                     <>
+                      <li>
+                        <Link className="dropdown-item" to="/orders">
+                          Orders
+                        </Link>
+                      </li>
                       <li>
                         <hr className="dropdown-divider" />
                       </li>
