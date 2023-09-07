@@ -83,7 +83,7 @@ function Register() {
                   <label htmlFor="password">Password</label>
                 </div>
                 <button
-                  className="w-100 mb-3 btn btn-lg rounded-3 btn-outline-secondary"
+                  className="w-100 mb-3 btn btn-lg rounded-3 btn-outline-primary"
                   type="submit"
                 >
                   Sign up

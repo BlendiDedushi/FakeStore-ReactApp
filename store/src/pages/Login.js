@@ -27,7 +27,7 @@ function Login() {
 
     if (userExists) {
       localStorage.setItem("loggedIn", JSON.stringify(user.username));
-      navigate("/products");
+      navigate("/");
     } else {
       setMessage("Incorrect username and/or password!");
     }
@@ -71,7 +71,7 @@ function Login() {
                   <label htmlFor="password">Password</label>
                 </div>
                 <button
-                  className="w-100 mb-2 btn btn-lg rounded-3 btn-outline-secondary"
+                  className="w-100 mb-2 btn btn-lg rounded-3 btn-outline-primary"
                   type="submit"
                 >
                   Sign in

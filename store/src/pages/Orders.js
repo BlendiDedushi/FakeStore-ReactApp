@@ -38,7 +38,7 @@ function Orders() {
   };
 
   return (
-    <section className="py-5">
+    <section className="py-5" style={{ height: "84.5vh" }}>
       <div className="container">
         {showDeleteModal && (
           <DeleteModal
@@ -58,9 +58,9 @@ function Orders() {
         {orders && orders.length > 0 ? (
           <>
             <h3 className="mb-4">{orders.length} orders</h3>
-            <table className="table table-bordered">
+            <table className="table table-bordered table-hover">
               <thead>
-                <tr>
+                <tr className="table-dark">
                   <th>#</th>
                   <th>Name</th>
                   <th>Email</th>
@@ -79,7 +79,7 @@ function Orders() {
                       {order.items.length}
                       <div>
                         <Button
-                          variant="outline-success"
+                          variant="outline-primary"
                           onClick={() => openTableModal(index)}
                           size="sm"
                           className="bi bi-arrows-angle-expand"
