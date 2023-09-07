@@ -33,7 +33,7 @@ function Checkout() {
   };
 
   return (
-    <section className="py-5">
+    <section className="py-5" style={{ minHeight: "84.5vh" }}>
       <div className="container d-flex justify-content-center">
         <div className="card w-50">
           <div className="card-body">

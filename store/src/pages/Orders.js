@@ -38,7 +38,7 @@ function Orders() {
   };
 
   return (
-    <section className="py-5" style={{ height: "84.5vh" }}>
+    <section className="py-5" style={{ minHeight: "84.5vh" }}>
       <div className="container">
         {showDeleteModal && (
           <DeleteModal

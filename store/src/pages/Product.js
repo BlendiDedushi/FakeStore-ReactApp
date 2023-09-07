@@ -12,6 +12,7 @@ function Product() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    setMessage()
     getProductById(id).then((data) => setProduct(data));
   }, [id]);
 
@@ -60,10 +61,26 @@ function Product() {
       setMessage("Login first to add to cart!");
     }
   };
+  const handlePrevClick = () => {
+    if(id > 1){
+      const prevId = parseInt(id) - 1;
+      navigate(`/products/${prevId}`);
+    }
+  };
 
+  const handleNextClick = () => {
+    if(id < 20){
+      const nextId = parseInt(id) + 1;
+      navigate(`/products/${nextId}`);
+    }
+  };
   return (
     product && (
-      <section className="py-5">
+      <section className="py-5 d-flex align-items-center" style={{ height: "84.5vh" }}>
+        <button className="btn btn-outline-dark btn-lg mx-2" onClick={handlePrevClick} disabled={id == 1}>
+          <i className="bi bi-arrow-bar-left">
+          </i>
+        </button>
         <div className="container">
           <div className="row">
             <div className="col-5">
@@ -107,6 +124,9 @@ function Product() {
             </div>
           </div>
         </div>
+        <button className="btn btn-outline-dark btn-lg mx-2" onClick={handleNextClick} disabled={id == 20}>
+          <i className="bi bi-arrow-bar-right"></i>
+        </button>
       </section>
     )
   );

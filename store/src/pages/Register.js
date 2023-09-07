@@ -30,6 +30,7 @@ function Register() {
         setMessage("Email is not valid!");
       } else {
         localStorage.setItem("users", JSON.stringify([...users, user]));
+        navigate("/login");
       }
     } else {
       localStorage.setItem("users", JSON.stringify([user]));
