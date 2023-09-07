@@ -14,7 +14,7 @@ function CategoriesComponent() {
       case "electronics":
         return "https://media.istockphoto.com/id/1328836875/vector/realistic-electronic-devices-and-gadgets-in-isometry-vector-isometric-illustration-of.jpg?s=612x612&w=0&k=20&c=4iwItEQ1P3lhjl350QXRl5IrgC8ufDImaoc-7_H5vVA=";
       case "jewelery":
-        return "https://media.istockphoto.com/id/1023260538/vector/diamond-gemstones-and-jewelry-related-thin-line-icon-set.jpg?s=612x612&w=0&k=20&c=3SD-zuCGjSKrvKIuytpr7cTMqq1Cme3I7Zhv9zqm8-c=";
+        return "https://img.freepik.com/free-photo/shiny-gemstone-drop-necklace-black-background-generated-by-ai_188544-14020.jpg?t=st=1694093067~exp=1694096667~hmac=ac98354ce57b1ca5c05a5168ae98018d7af233081eec098b58327c637130e7c1&w=1060";
       case "men's clothing":
         return "https://media.istockphoto.com/id/1489370479/vector/suits-and-business-items-icon-simple-illustration-set-material.jpg?s=612x612&w=0&k=20&c=3NwV69wwW6LKcVPuDBCajsuEGDGFxp5tHszTgT4uzVI=";
       case "women's clothing":

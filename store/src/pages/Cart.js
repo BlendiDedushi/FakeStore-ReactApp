@@ -78,7 +78,9 @@ function Cart() {
             </table>
           </>
         ) : (
-          <p>Cart is empty!</p>
+          <>
+            <h1>Cart is empty!</h1>
+          </>
         )}
       </div>
     </section>
