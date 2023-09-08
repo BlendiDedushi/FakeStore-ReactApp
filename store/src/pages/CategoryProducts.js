@@ -12,7 +12,7 @@ function CategoryProducts() {
   }, [category]);
 
   return (
-    <div>
+    <div style={{ minHeight: "84.5vh" }}>
       <div className="container py-4">
         <div className="row">
           {products !== null &&
