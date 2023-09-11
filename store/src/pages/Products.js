@@ -31,7 +31,7 @@ function Products() {
   );
 
   return (
-    <div className="container py-4">
+    <div className="container py-4" style={{ minHeight: "84.5vh" }}>
       <div className="d-flex justify-content-between align-items-center my-3">
         <input
           type="text"
